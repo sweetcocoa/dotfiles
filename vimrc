@@ -38,6 +38,7 @@ nnoremap ; :
  Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
  " Bundle 'tpope/vim-rails.git'
  " vim-scripts repos
+ Bundle 'AutoComplPop'
  Bundle 'L9'
  Bundle 'FuzzyFinder'
  Bundle 'bling/vim-airline'
