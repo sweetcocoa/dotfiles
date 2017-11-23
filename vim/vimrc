@@ -1,0 +1,66 @@
+call plug#begin('~/.vim/plugged')
+
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+  
+endif
+
+Plug 'zchee/deoplete-jedi'
+Plug 'carlitux/deoplete-ternjs'
+Plug 'shougo/echodoc'
+
+Plug 'tpope/vim-sleuth'
+Plug 'nathanaelkane/vim-indent-guides'
+
+Plug 'scrooloose/nerdtree'
+Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'itchyny/lightline.vim'
+
+
+Plug 'neomake/neomake'
+Plug 'mileszs/ack.vim'
+Plug 'amix/open_file_under_cursor.vim'
+
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'vim-scripts/nginx.vim'
+
+
+call plug#end()
+
+let g:deoplete#enable_at_startup = 1
+let g:echodoc_type = 'signature'
+"set completeopt-=preview
+let g:python3_host_prog = expand('/usr/bin/python')
+
+
+" call neomake#configure#automake('w') " When writing a buffer.
+" call neomake#configure#automake('nw', 750) " When writing a buffer, and on normal mode changes (after 750ms).
+" call neomake#configure#automake('rw', 1000) " When reading a buffer (after 1s), and when writing.
+
+
+" NERDTree mappings {{{
+map <C-n> :NERDTreeToggle<CR>
+" }}}
+
+" NERDTree {{{
+let NERDTreeShowHidden=1
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+" }}}
+
+set cmdheight=3
+set background=dark
+set number
+set cursorline
+set wildmenu
+set noswapfile
+set ignorecase
+
+
+colorscheme peaksea
