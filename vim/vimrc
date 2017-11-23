@@ -36,13 +36,7 @@ call plug#end()
 
 let g:deoplete#enable_at_startup = 1
 let g:echodoc_type = 'signature'
-"set completeopt-=preview
-let g:python3_host_prog = expand('/usr/bin/python')
-
-
-" call neomake#configure#automake('w') " When writing a buffer.
-" call neomake#configure#automake('nw', 750) " When writing a buffer, and on normal mode changes (after 750ms).
-" call neomake#configure#automake('rw', 1000) " When reading a buffer (after 1s), and when writing.
+let g:python3_host_prog = system('echo -n $(which python3)') " expand('/usr/bin/python3')
 
 
 " NERDTree mappings {{{
@@ -54,7 +48,7 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 " }}}
 
-set cmdheight=3
+set cmdheight=2
 set background=dark
 set number
 set cursorline

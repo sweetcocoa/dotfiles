@@ -9,11 +9,8 @@ if [ -x "$(command -v apt-get)" ]; then
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
     update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
-    update-alternatives --config vi
     update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-    update-alternatives --config vim
     update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
-    update-alternatives --config editor
 elif [ -x "$(command -v pacman)" ]; then
     pacman -S --noconfirm --needed neovim vim-plug git python2-neovim python-neovim xclip xsel python-jedi
     pacman -R --noconfirm vim vi
