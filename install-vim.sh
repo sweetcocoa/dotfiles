@@ -5,7 +5,7 @@ if [ -x "$(command -v apt-get)" ]; then
     apt-get install -y neovim git xclip xsel python-jedi
     pip3 install neovim
     pip install neovim
-    curl -fLo ~/.config/nvim/site/autoload/plug.vim --create-dirs \
+    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
     update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
