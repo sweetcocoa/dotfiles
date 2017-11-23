@@ -2,16 +2,18 @@ if [ -x "$(command -v apt-get)" ]; then
     apt-get install software-properties-common
     add-apt-repository -y ppa:neovim-ppa/stable
     apt-get update
-    apt-get install -y neovim vim-plug git xclip xsel python-jedi
+    apt-get install -y neovim git xclip xsel python-jedi
     pip3 install neovim
     pip install neovim
+    curl -fLo ~/.config/nvim/site/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-    sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
-    sudo update-alternatives --config vi
-    sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-    sudo update-alternatives --config vim
-    sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
-    sudo update-alternatives --config editor
+    update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
+    update-alternatives --config vi
+    update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
+    update-alternatives --config vim
+    update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
+    update-alternatives --config editor
 elif [ -x "$(command -v pacman)" ]; then
     pacman -S --noconfirm --needed neovim vim-plug git python2-neovim python-neovim xclip xsel python-jedi
     pacman -R --noconfirm vim vi
