@@ -14,11 +14,11 @@ chmod g-w ~/.slimzsh
 # auto suggestion
 if [ -x "$(command -v pacaur)" ]; then
   pacman -S --needed zsh-autosuggestions
+  mkdir -p ~/.zsh
   ln -s /usr/share/zsh/plugins/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 else
-  git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/zsh-autosuggestions
 fi
-
 
 # zshrc
 pwd="$(pwd -P)"
