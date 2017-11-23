@@ -38,6 +38,6 @@ alias gpu='watch -n 1 nvidia-smi'
 
 export LESS='--ignore-case --raw-control-chars'
 alias t='tmux attach -t 0 || tmux new'
-alias d='docker exec -it notebook bash'
+alias d='docker exec -it notebook zsh'
 alias docker='sudo -g docker /usr/bin/docker'
 alias nvidia-docker='sudo -g docker /usr/bin/nvidia-docker'

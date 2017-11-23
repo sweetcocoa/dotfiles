@@ -15,11 +15,15 @@ chmod g-w ~/.slimzsh
 if [ -x "$(command -v pacaur)" ]; then
   pacman -S --needed zsh-autosuggestions
   mkdir -p ~/.zsh
-  ln -s /usr/share/zsh/plugins/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+  ln -sf /usr/share/zsh/plugins/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 else
   git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/zsh-autosuggestions
 fi
 
+# permission fix
+zsh -c "compaudit | xargs chmod g-w"
+zsh -c "compaudit | xargs chown root"
+
 # zshrc
 pwd="$(pwd -P)"
-ln -s $pwd/zshrc ~/.zshrc
+ln -sf $pwd/zshrc ~/.zshrc
