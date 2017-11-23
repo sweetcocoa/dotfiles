@@ -1,7 +1,10 @@
 if [ -x "$(command -v apt-get)" ]; then
-  apt-get install -y neovim vim-plug git python2-neovim python-neovim xclip xsel python-jedi
+    apt-get install software-properties-common
+    add-apt-repository ppa:neovim-ppa/stable
+    apt-get update
+    apt-get install -y neovim vim-plug git python2-neovim python-neovim xclip xsel python-jedi
 elif [ -x "$(command -v pacman)" ]; then
-  pacman -S --noconfirm --needed neovim vim-plug git python2-neovim python-neovim xclip xsel python-jedi
+    pacman -S --noconfirm --needed neovim vim-plug git python2-neovim python-neovim xclip xsel python-jedi
 fi
 
 mkdir -p ~/.config/nvim/colors
