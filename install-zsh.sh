@@ -20,10 +20,11 @@ else
   git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/zsh-autosuggestions
 fi
 
+# zshrc
+pwd="$(pwd -P)"
+ln -sf $pwd/zshrc ~/.zshrc
+
 # permission fix
 zsh -c "autoload -U compaudit; compaudit | xargs --no-run-if-empty chmod g-w"
 zsh -c "autoload -U compaudit; compaudit | xargs --no-run-if-empty chown root"
 
-# zshrc
-pwd="$(pwd -P)"
-ln -sf $pwd/zshrc ~/.zshrc
