@@ -21,8 +21,8 @@ else
 fi
 
 # permission fix
-zsh -c "compaudit | xargs --no-run-if-empty chmod g-w"
-zsh -c "compaudit | xargs --no-run-if-empty chown root"
+zsh -c "autoload -U compaudit; compaudit | xargs --no-run-if-empty chmod g-w"
+zsh -c "autoload -U compaudit; compaudit | xargs --no-run-if-empty chown root"
 
 # zshrc
 pwd="$(pwd -P)"
