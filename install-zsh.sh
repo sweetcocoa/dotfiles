@@ -25,7 +25,9 @@ pwd="$(pwd -P)"
 ln -sf $pwd/zshrc ~/.zshrc
 
 # permission fix
-zsh -c "autoload -U compaudit; compaudit"
+echo "compaudit :"
+zsh -c "autoload -U compaudit; compaudit" | echo
 zsh -c "autoload -U compaudit; compaudit | xargs --no-run-if-empty chmod g-w"
 zsh -c "autoload -U compaudit; compaudit | xargs --no-run-if-empty chown root"
+echo "--- compaudit end ---"
 
