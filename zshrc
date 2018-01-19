@@ -36,17 +36,15 @@ unsetopt correct_all
 
 
 alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias ls='ls --color=auto'
 alias gpu='watch -n 1 nvidia-smi'
 alias commit='git commit -m'
-alias ga='git add -u'
+alias add='git add -u'
 
 
 export LESS='--ignore-case --raw-control-chars'
 alias t='tmux attach -t 0 || tmux new'
 alias d='docker exec -it notebook zsh'
-alias docker='sudo -g docker /usr/bin/docker'
-alias nvidia-docker='sudo -g docker /usr/bin/nvidia-docker'
+
+export GOROOT=~/.go
+export PATH=$PATH:$GOROOT/bin
 
