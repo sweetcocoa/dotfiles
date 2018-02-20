@@ -1,5 +1,6 @@
 # git clone --recursive https://github.com/changs/slimzsh.git
 source "$HOME/.slimzsh/slim.zsh"
+setopt nocorrectall
 
 # pacaur -S zsh-autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
