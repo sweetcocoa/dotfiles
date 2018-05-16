@@ -18,4 +18,7 @@ export LESS='--ignore-case --raw-control-chars'
 export GOROOT=/usr/lib/go
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-export PATH=$PATH:~/go/bin
+
+export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/yarn/bin  # e.g. yarn global add babel
+export PATH=$PATH:$HOME/cargo/bin  # e.g. cargo install cargo-make
