@@ -12,9 +12,9 @@ if [ -x "$(command -v apt-get)" ]; then
     update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
     update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 elif [ -x "$(command -v pacman)" ]; then
-    pacman -S --noconfirm --needed neovim vim-plug python-neovim python-jedi
-    pacman -R --noconfirm vim vi
-    pacman -S --noconfirm --needed neovim-drop-in
+    pacaur -S --noconfirm --needed neovim vim-plug python-neovim python-jedi
+    pacaur -R --noconfirm vim vi
+    pacaur -S --noconfirm --needed neovim-drop-in
 fi
 
 pwd="$(pwd -P)"
