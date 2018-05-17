@@ -2,8 +2,10 @@
 source "$HOME/.slimzsh/slim.zsh"
 setopt nocorrectall
 
-# pacaur -S zsh-autosuggestions
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# arch: pacaur -S zsh-autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+# ubuntu: git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 
 alias grep='grep --color=auto'
 alias gpu='watch -n 1 nvidia-smi'
@@ -15,6 +17,8 @@ alias t='tmux attach -t 0 || tmux new'
 alias d='docker exec -it notebook zsh'
 
 export LESS='--ignore-case --raw-control-chars'
+export TERM='screen-256color'
+
 export GOROOT=/usr/lib/go
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
