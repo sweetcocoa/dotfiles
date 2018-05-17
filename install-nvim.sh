@@ -13,11 +13,12 @@ if [ -x "$(command -v apt-get)" ]; then
     update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 elif [ -x "$(command -v pacman)" ]; then
     pacaur -S --noconfirm --needed neovim vim-plug python-neovim python-jedi
-    pacaur -R --noconfirm vim vi
+    pacaur -R --noconfirm vi vim
     pacaur -S --noconfirm --needed neovim-drop-in
 fi
 
 pwd="$(pwd -P)"
 
+mkdir -p ~/.config/nvim
 ln -sf $pwd/vim/vimrc ~/.config/nvim/init.vim
 nvim --headless +PlugInstall +qa
