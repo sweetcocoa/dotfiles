@@ -1,5 +1,11 @@
 call plug#begin('~/.local/share/nvim/site/plugged')
 
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+
 Plug 'Shougo/deoplete.nvim', {'do':':UpdateRemotePlugins'}
 Plug 'zchee/deoplete-jedi'
 Plug 'shougo/echodoc'
@@ -22,18 +28,30 @@ call plug#end()
 
 
 let g:deoplete#enable_at_startup = 1
-let g:echodoc_type = 'signature'
-let g:python3_host_prog = system('echo -n $(which python3)') " expand('/usr/bin/python3')
+call deoplete#custom#source('_', 'disabled_syntaxes', ['Comment', 'String'])
+let g:deoplete#sources = {}
+let g:deoplete#sources.rust = ['LanguageClient']
 
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ }
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+call neomake#configure#automake('w')
+let g:neomake_open_list = 2
+
+let g:echodoc_type = 'signature'
 let g:echodoc#enable_at_startup = 1
 set completeopt-=preview
+let g:python3_host_prog = system('echo -n $(which python3)') " expand('/usr/bin/python3')
+
 
 
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 
-
+set hidden
 set laststatus=2 " for lightline.vim
 set cmdheight=2
 set background=dark
