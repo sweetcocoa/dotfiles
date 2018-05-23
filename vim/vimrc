@@ -1,13 +1,16 @@
+" pip install neovim
+" pip install 'python-language-server[all]'
+" rustup component add rls-preview rust-analysis rust-src
+
 call plug#begin('~/.local/share/nvim/site/plugged')
 
-Plug 'autozimu/LanguageClient-neovim', {
+Plug 'autozimu/LanguageClient-neuovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
 
 
 Plug 'Shougo/deoplete.nvim', {'do':':UpdateRemotePlugins'}
-Plug 'zchee/deoplete-jedi'
 Plug 'shougo/echodoc'
 Plug 'ervandew/supertab'
 
@@ -34,6 +37,7 @@ let g:deoplete#sources.rust = ['LanguageClient']
 
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'python': ['pyls'],
     \ }
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
