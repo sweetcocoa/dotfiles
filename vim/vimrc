@@ -4,7 +4,7 @@
 
 call plug#begin('~/.local/share/nvim/site/plugged')
 
-Plug 'autozimu/LanguageClient-neuovim', {
+Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
